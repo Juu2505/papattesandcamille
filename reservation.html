@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de Réservation | Camille & Cie</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-stone-900 text-white pt-24 min-h-screen flex flex-col justify-between">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-stone-900 border-b border-stone-800 backdrop-blur bg-opacity-95">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="font-serif text-2xl font-semibold tracking-tight text-white">Camille & Cie</a>
+            <div class="flex items-center gap-10 text-sm font-medium">
+                <a href="services.html" class="text-stone-400 hover:text-white transition-colors">Services</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-16 px-6 max-w-4xl mx-auto w-full grid md:grid-cols-2 gap-16 items-start my-auto">
+        <div>
+            <p class="text-stone-400 text-xs tracking-widest uppercase mb-5">Planifier</p>
+            <h1 class="font-serif text-5xl md:text-6xl font-semibold leading-tight mb-8">
+                Formulaire de<br /><span class="italic font-normal text-stone-300">réservation.</span>
+            </h1>
+            <p class="text-stone-400 text-sm leading-relaxed font-light">
+                Indiquez-moi vos besoins en quelques lignes. Je regarde mes disponibilités actuelles et je vous recontacte sous 24h pour finaliser l'agenda.
+            </p>
+        </div>
+        
+        <form class="space-y-5 bg-stone-800/50 p-8 rounded-2xl border border-stone-800">
+            <div>
+                <label class="block text-stone-400 text-xs uppercase tracking-wider mb-2">Nom complet</label>
+                <input type="text" required placeholder="Votre nom" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-stone-500 transition-colors">
+            </div>
+            <div>
+                <label class="block text-stone-400 text-xs uppercase tracking-wider mb-2">Adresse email</label>
+                <input type="email" required placeholder="votre@email.com" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-stone-500 transition-colors">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-stone-400 text-xs uppercase tracking-wider mb-2">Animal</label>
+                    <input type="text" required placeholder="Ex: Chien, Chat" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-stone-500 transition-colors">
+                </div>
+                <div>
+                    <label class="block text-stone-400 text-xs uppercase tracking-wider mb-2">Dates</label>
+                    <input type="text" required placeholder="Ex: 12-15 juillet" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-stone-500 transition-colors">
+                </div>
+            </div>
+            <div>
+                <label class="block text-stone-400 text-xs uppercase tracking-wider mb-2">Détails</label>
+                <textarea rows="3" placeholder="Particularités, habitudes de l'animal..." class="w-full bg-stone-800 border border-stone-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-stone-500 transition-colors resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full flex items-center justify-center gap-2 bg-white text-stone-900 font-medium py-3.5 rounded-xl hover:bg-stone-100 transition-colors">
+                Envoyer la demande <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+        </form>
+    </section>
+
+    <footer class="bg-stone-950 text-stone-700 text-center py-7 text-xs tracking-wide">
+        <span class="font-serif text-stone-500 text-base">Camille & Cie</span>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
