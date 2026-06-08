@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services et Tarifs | Camille & Cie</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-stone-50 text-stone-800 pt-24">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-stone-50 bg-opacity-95 backdrop-blur border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="font-serif text-2xl font-semibold tracking-tight text-stone-900">Camille & Cie</a>
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium text-stone-500">
+                <a href="services.html" class="text-stone-900 font-semibold border-b border-stone-900 pb-1">Services</a>
+                <a href="reservation.html" class="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-700 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors">
+                    Réserver <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </div>
+            <button class="md:hidden text-stone-900" onclick="toggleMenu()">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="border-b border-stone-200 pb-8 mb-16">
+            <p class="text-stone-400 text-xs tracking-widest uppercase mb-3">Prestations & clarté</p>
+            <h1 class="font-serif text-5xl md:text-6xl font-semibold text-stone-900">Grille des tarifs</h1>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="group">
+                <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80&fit=crop" alt="Garde à domicile" class="w-full h-full object-cover" />
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-600 text-xs font-medium px-3 py-1 rounded-full">dès 35 € / nuit</div>
+                </div>
+                <h3 class="font-serif text-3xl font-semibold text-stone-900 mb-3">Garde à domicile</h3>
+                <p class="text-stone-500 text-sm leading-relaxed font-light">Je m'installe chez vous pour veiller sur vos compagnons. Ils gardent leurs repères, leurs habitudes et leur confort habituel.</p>
+            </div>
+            <div class="group">
+                <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80&fit=crop" alt="Visites quotidiennes" class="w-full h-full object-cover" />
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-600 text-xs font-medium px-3 py-1 rounded-full">dès 15 € / visite</div>
+                </div>
+                <h3 class="font-serif text-3xl font-semibold text-stone-900 mb-3">Visites quotidiennes</h3>
+                <p class="text-stone-500 text-sm leading-relaxed font-light">Un ou plusieurs passages par jour pour la nourriture, les soins et une vraie séance de câlins. Idéal pour les chats.</p>
+            </div>
+            <div class="group">
+                <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square">
+                    <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=800&q=80&fit=crop" alt="Balades" class="w-full h-full object-cover" />
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-600 text-xs font-medium px-3 py-1 rounded-full">dès 18 € / balade</div>
+                </div>
+                <h3 class="font-serif text-3xl font-semibold text-stone-900 mb-3">Balades & sorties</h3>
+                <p class="text-stone-500 text-sm leading-relaxed font-light">Des promenades rythmées en nature pour couper la journée de votre chien, adaptées à son endurance et son caractère.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-950 text-stone-600 text-center py-7 text-xs tracking-wide mt-20">
+        <span class="font-serif text-stone-400 text-base">Camille & Cie</span>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
