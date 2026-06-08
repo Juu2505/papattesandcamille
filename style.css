@@ -1,0 +1,9 @@
+/* Définition des polices pour l'ensemble du site */
+body { 
+    font-family: 'DM Sans', sans-serif; 
+}
+
+/* Classe spécifique pour appliquer la police éditoriale serif sur les titres */
+.font-serif { 
+    font-family: 'Cormorant Garamond', serif; 
+}

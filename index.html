@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camille & Cie | Garde d'animaux de compagnie</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-stone-50 text-stone-800 overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-stone-50 bg-opacity-95 backdrop-blur border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="font-serif text-2xl font-semibold tracking-tight text-stone-900">
+                Camille & Cie
+            </div>
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium text-stone-500">
+                <button onclick="scrollToSection('services')" class="hover:text-stone-900 transition-colors">Services</button>
+                <button onclick="scrollToSection('a-propos')" class="hover:text-stone-900 transition-colors">À propos</button>
+                <button onclick="scrollToSection('contact')" class="hover:text-stone-900 transition-colors">Contact</button>
+                
+                <button onclick="scrollToSection('contact')" class="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-700 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors">
+                    Réserver <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+            <button class="md:hidden text-stone-900" onclick="toggleMenu()">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-stone-100 bg-stone-50 px-6 py-5 flex flex-col gap-5 text-sm text-stone-600">
+            <button onclick="scrollToSection('services')" class="text-left hover:text-stone-900">Services</button>
+            <button onclick="scrollToSection('a-propos')" class="text-left hover:text-stone-900">À propos</button>
+            <button onclick="scrollToSection('contact')" class="text-left hover:text-stone-900">Contact</button>
+        </div>
+    </nav>
+
+    <section id="accueil" class="relative min-h-screen flex items-end overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=1400&q=85&fit=crop" alt="Personne avec son chien" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 pb-20 pt-32">
+            <div>
+                <p class="text-stone-300 text-xs font-medium tracking-widest uppercase mb-6">
+                    Garde d'animaux · Paris & alentours
+                </p>
+                <h1 class="font-serif text-6xl md:text-8xl font-semibold text-white leading-none mb-8 max-w-3xl">
+                    Vos animaux<br />
+                    <span class="italic font-normal">méritent</span> le<br />
+                    meilleur.
+                </h1>
+                <p class="text-stone-300 text-base md:text-lg max-w-md leading-relaxed mb-10 font-light">
+                    Je m'appelle Camille, j'ai 23 ans et je prends soin de vos compagnons avec tout le sérieux et la tendresse qu'ils méritent.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 items-start mb-16">
+                    <button onclick="scrollToSection('contact')" class="flex items-center gap-2 bg-white text-stone-900 font-medium px-7 py-3.5 rounded-full hover:bg-stone-100 transition-colors">
+                        Prendre contact <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="scrollToSection('services')" class="flex items-center gap-2 text-white border border-white/40 hover:border-white/80 font-light px-7 py-3.5 rounded-full transition-colors">
+                        Voir les services
+                    </button>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-6">
+                <div class="flex items-center gap-2 text-stone-300 text-sm"><i data-lucide="shield" class="w-4 h-4 text-stone-400"></i> Assurée RC Pro</div>
+                <div class="flex items-center gap-2 text-stone-300 text-sm"><i data-lucide="clock" class="w-4 h-4 text-stone-400"></i> Disponible 7j/7</div>
+                <div class="flex items-center gap-2 text-stone-300 text-sm"><i data-lucide="map-pin" class="w-4 h-4 text-stone-400"></i> Paris & banlieue</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-28 px-6 bg-stone-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-end justify-between mb-16 border-b border-stone-200 pb-8">
+                <div>
+                    <p class="text-stone-400 text-xs tracking-widest uppercase mb-3">Ce que je propose</p>
+                    <h2 class="font-serif text-5xl md:text-6xl font-semibold text-stone-900">Mes services</h2>
+                </div>
+                <button onclick="scrollToSection('contact')" class="hidden md:flex items-center gap-2 text-stone-500 hover:text-stone-900 text-sm transition-colors">
+                    Demander un tarif <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80&fit=crop" alt="Garde à domicile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-600 text-xs font-medium px-3 py-1 rounded-full">dès 35 € / nuit</div>
+                        <div class="font-serif absolute bottom-4 left-4 text-white/30 text-7xl font-semibold leading-none select-none">01</div>
+                    </div>
+                    <h3 class="font-serif text-3xl font-semibold text-stone-900 mb-3 leading-tight">Garde<br>à domicile</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed font-light">Je m'installe chez vous durant votre absence. Vos animaux conservent leurs habitudes, leur environnement, leur sécurité.</p>
+                </div>
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80&fit=crop" alt="Visites quotidiennes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-600 text-xs font-medium px-3 py-1 rounded-full">dès 15 € / visite</div>
+                        <div class="font-serif absolute bottom-4 left-4 text-white/30 text-7xl font-semibold leading-none select-none">02</div>
+                    </div>
+                    <h3 class="font-serif text-3xl font-semibold text-stone-900 mb-3 leading-tight">Visites<br>quotidiennes</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed font-light">Je passe une à deux fois par jour pour nourrir, soigner et câliner vos compagnons. Parfait pour les chats et petits animaux.</p>
+                </div>
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=800&q=80&fit=crop" alt="Balades & promenades" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-600 text-xs font-medium px-3 py-1 rounded-full">dès 18 € / balade</div>
+                        <div class="font-serif absolute bottom-4 left-4 text-white/30 text-7xl font-semibold leading-none select-none">03</div>
+                    </div>
+                    <h3 class="font-serif text-3xl font-semibold text-stone-900 mb-3 leading-tight">Balades<br>& promenades</h3>
+                    <p class="text-stone-
