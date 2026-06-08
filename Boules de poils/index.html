@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camille & Cie | Garde d'animaux de compagnie</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { font-family: 'DM Sans', sans-serif; }
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-stone-50 bg-opacity-95 backdrop-blur border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="font-serif text-2xl font-semibold tracking-tight text-stone-900">
+                Camille & Cie
+            </div>
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium text-stone-500">
+                <button onclick="scrollToSection('services')" class="hover:text-stone-900 transition-colors">Services</button>
+                <button onclick="scrollToSection('a-propos')" class="hover:text-stone-900 transition-colors">À propos</button>
+                <button onclick="scrollToSection('avis')" class="hover:text-stone-900 transition-colors">Avis</button>
+                <button onclick="scrollToSection('contact')" class="hover:text-stone-900 transition-colors">Contact</button>
+                
+                <button onclick="scrollToSection('contact')" class="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-700 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors">
+                    Réserver <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+            <button class="md:hidden text-stone-900" onclick="toggleMenu()">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-stone-100 bg-stone-50 px-6 py-5 flex flex-col gap-5 text-sm text-stone-600">
+            <button onclick="scrollToSection('services')" class="text-left hover:text-stone-900">Services</button>
+            <button onclick="scrollToSection('a-propos')" class="text-left hover:text-stone-900">À propos</button>
+            <button onclick="scrollToSection('avis')" class="text-left hover:text-stone-900">Avis</button>
+            <button onclick="scrollToSection('contact')" class="text-left hover:text-stone-900">Contact</button>
+        </div>
+    </nav>
+
+    <section id="accueil" class="relative min-h-screen flex items-end overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=1400&q=85&fit=crop" alt="Personne avec son chien" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 pb-20 pt-32">
+            <div>
+                <p class="text-stone-300 text-xs font-medium tracking-widest uppercase mb-6">
+                    Garde d'animaux · Paris & alentours
+                </p>
+                <h1 class="font-serif text-6xl md:text-8xl font-semibold text-white leading-none mb-8 max-w-3xl">
+                    Vos animaux<br />
+                    <span class="italic font-normal">méritent</span> le<br />
+                    meilleur.
+                </h1>
+                <p class="text-stone-300 text-base md:text-lg max-w-md leading-relaxed mb-10 font-light">
+                    Je m'appelle Camille, j'ai 23 ans et je prends soin de vos compagnons avec tout le sérieux et la tendresse qu'ils méritent.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 items-start mb-16">
+                    <button onclick="scrollToSection('contact')" class="flex items-center gap-2 bg-white text-stone-900 font-medium px-7 py-3.5 rounded-full hover:bg-stone-100 transition-colors">
+                        Prendre contact <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="scrollToSection('services')" class="flex items-center gap-2 text-white border border-white/40 hover:border-white/80 font-light px-7 py-3.5 rounded-full transition-colors">
+                        Voir les services
+                    </button>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-6">
+                <div class="flex items-center gap-2 text-stone-300 text-sm"><i data-lucide="shield" class="w-4 h-4 text-stone-400"></i> Assurée RC Pro</div>
+                <div class="flex items-center gap-2 text-stone-300 text-sm"><i data-lucide="star" class="w-4 h-4 text-stone-400"></i> 30+ familles satisfaites</div>
+                <div class="flex items-center gap-2 text-stone-300 text-sm"><i data-lucide="clock" class="w-4 h-4 text-stone-400"></i> Disponible 7j/7</div>
+                <div class="flex items-center gap-2 text-stone-300 text-sm"><i data-lucide="map-pin" class="w-4 h-4 text-stone-400"></i> Paris & banlieue</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-28 px-6 bg-stone-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-end justify-between mb-16 border-b border-stone-200 pb-8">
+                <div>
+                    <p class="text-stone-400 text-xs tracking-widest uppercase mb-3">Ce que je propose</p>
+                    <h2 class="font-serif text-5xl md:text-6xl font-semibold text-stone-900">Mes services</h2>
+                </div>
+                <button onclick="scrollToSection('contact')" class="hidden md:flex items-center gap-2 text-stone-500 hover:text-stone-900 text-sm transition-colors">
+                    Demander un tarif <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80&fit=crop" alt="Garde à domicile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-600 text-xs font-medium px-3 py-1 rounded-full">dès 35 € / nuit</div>
+                        <div class="font-serif absolute bottom-4 left-4 text-white/30 text-7xl font-semibold leading-none select-none">01</div>
+                    </div>
+                    <h3 class="font-serif text-3xl font-semibold text-stone-900 mb-3 leading-tight">Garde<br>à domicile</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed font-light">Je m'installe chez vous durant votre absence. Vos animaux conservent leurs habitudes, leur environnement, leur sécurité.</p>
+                </div>
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80&fit=crop" alt="Visites quotidiennes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-600 text-xs font-medium px-3 py-1 rounded-full">dès 15 € / visite</div>
+                        <div class="font-serif absolute bottom-4 left-4 text-white/30 text-7xl font-semibold leading-none select-none">02</div>
+                    </div>
+                    <h3 class="font-serif text-3xl font-semibold text-stone-900 mb-3 leading-tight">Visites<br>quotidiennes</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed font-light">Je passe une à deux fois par jour pour nourrir, soigner et câliner vos compagnons. Parfait pour les chats et petits animaux.</p>
+                </div>
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=800&q=80&fit=crop" alt="Balades & promenades" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-600 text-xs font-medium px-3 py-1 rounded-full">dès 18 € / balade</div>
+                        <div class="font-serif absolute bottom-4 left-4 text-white/30 text-7xl font-semibold leading-none select-none">03</div>
+                    </div>
+                    <h3 class="font-serif text-3xl font-semibold text-stone-900 mb-3 leading-tight">Balades<br>& promenades</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed font-light">Des sorties adaptées au rythme et au caractère de votre chien. Parce qu'une bonne balade, ça change vraiment tout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="a-propos" class="py-28 px-6 bg-stone-100">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?w=900&q=85&fit=crop" alt="Camille avec un chien" class="w-full aspect-square object-cover rounded-2xl" />
+                <div class="absolute -bottom-6 -right-6 bg-stone-900 text-white rounded-2xl px-7 py-5 hidden md:block">
+                    <p class="font-serif text-4xl font-semibold">30+</p>
+                    <p class="text-stone-400 text-xs mt-1">familles satisfaites</p>
+                </div>
+            </div>
+            <div>
+                <p class="text-stone-400 text-xs tracking-widest uppercase mb-5">Un peu sur moi</p>
+                <h2 class="font-serif text-5xl md:text-6xl font-semibold text-stone-900 mb-8 leading-tight">
+                    Passionnée<br /><span class="italic font-normal">depuis toujours.</span>
+                </h2>
+                <div class="space-y-5 text-stone-500 text-sm leading-loose font-light">
+                    <p>J'ai grandi entourée d'animaux de toutes sortes. Chiens, chats, lapins, cochons d'Inde — la maison a toujours été un peu une arche de Noé.</p>
+                    <p>Aujourd'hui j'ai 23 ans, et je mets cette passion au service des familles qui cherchent quelqu'un de <span class="text-stone-800 font-medium">véritablement fiable et attentionné</span>.</p>
+                    <p>Chaque animal est différent. Je prends le temps de comprendre ses habitudes, ses preferences, ses petits rituels. Et je vous envoie des nouvelles chaque jour, photos à l'appui.</p>
+                </div>
+                <div class="mt-10 pt-8 border-t border-stone-200">
+                    <p class="text-xs text-stone-400 uppercase tracking-widest mb-4">Animaux acceptés</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs font-medium text-stone-600 bg-white border border-stone-200 px-4 py-1.5 rounded-full">Chiens</span>
+                        <span class="text-xs font-medium text-stone-600 bg-white border border-stone-200 px-4 py-1.5 rounded-full">Chats</span>
+                        <span class="text-xs font-medium text-stone-600 bg-white border border-stone-200 px-4 py-1.5 rounded-full">Lapins</span>
+                        <span class="text-xs font-medium text-stone-600 bg-white border border-stone-200 px-4 py-1.5 rounded-full">Rongeurs</span>
+                        <span class="text-xs font-medium text-stone-600 bg-white border border-stone-200 px-4 py-1.5 rounded-full">Oiseaux</span>
+                        <span class="text-xs font-medium text-stone-600 bg-white border border-stone-200 px-4 py-1.5 rounded-full">NAC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="avis" class="py-28 px-6 bg-stone-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16 border-b border-stone-200 pb-8">
+                <p class="text-stone-400 text-xs tracking-widest uppercase mb-3">Ils me font confiance</p>
+                <h2 class="font-serif text-5xl md:text-6xl font-semibold text-stone-900">Ce qu'ils disent</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-stone-100 rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <i data-lucide="quote" class="text-stone-300 w-6 h-6 mb-6"></i>
+                        <p class="font-serif text-xl text-stone-700 leading-relaxed mb-8 italic">"Camille a pris soin de ma chatte comme si c'était la sienne. Des nouvelles chaque jour avec des photos, je partais vraiment l'esprit tranquille."</p>
+                    </div>
+                    <div class="pt-6 border-t border-stone-200">
+                        <div class="flex gap-0.5 mb-3 text-stone-400 fill-stone-400"><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i></div>
+                        <p class="font-medium text-stone-900 text-sm">Sophie M.</p>
+                        <p class="text-stone-400 text-xs mt-0.5">Propriétaire de Noisette, chatte</p>
+                    </div>
+                </div>
+                <div class="bg-stone-100 rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <i data-lucide="quote" class="text-stone-300 w-6 h-6 mb-6"></i>
+                        <p class="font-serif text-xl text-stone-700 leading-relaxed mb-8 italic">"Rex adore Camille. Très à l'écoute, sérieuse et vraiment passionnée par ce qu'elle fait. On recommande sans hésiter."</p>
+                    </div>
+                    <div class="pt-6 border-t border-stone-200">
+                        <div class="flex gap-0.5 mb-3 text-stone-400 fill-stone-400"><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i></div>
+                        <p class="font-medium text-stone-900 text-sm">Thomas & Léa</p>
+                        <p class="text-stone-400 text-xs mt-0.5">Propriétaires de Rex, labrador</p>
+                    </div>
+                </div>
+                <div class="bg-stone-100 rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <i data-lucide="quote" class="text-stone-300 w-6 h-6 mb-6"></i>
+                        <p class="font-serif text-xl text-stone-700 leading-relaxed mb-8 italic">"Première fois que je confiais mes cochons d'Inde et j'étais inquiète. Elle a été rassurante, attentionnée, et vraiment professionnelle."</p>
+                    </div>
+                    <div class="pt-6 border-t border-stone-200">
+                        <div class="flex gap-0.5 mb-3 text-stone-400 fill-stone-400"><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i><i data-lucide="star" class="w-3 h-3"></i></div>
+                        <p class="font-medium text-stone-900 text-sm">Marie-Claire D.</p>
+                        <p class="text-stone-400 text-xs mt-0.5">Propriétaire de Pépite & Caramel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-28 px-6 bg-stone-900 text-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <p class="text-stone-400 text-xs tracking-widest uppercase mb-5">Parlons-nous</p>
+                <h2 class="font-serif text-5xl md:text-6xl font-semibold leading-tight mb-8">
+                    Réservons<br /><span class="italic font-normal">ensemble.</span>
+                </h2>
+                <p class="text-stone-400 text-sm leading-relaxed font-light max-w-sm">
+                    Contactez-moi pour vérifier mes disponibilités, poser vos questions, ou simplement qu'on fasse connaissance avant de se lancer.
+                </p>
+            </div>
+            <div class="space-y-5">
+                <div class="flex items-center gap-5 border border-stone-700 rounded-xl px-6 py-5 hover:border-stone-500 transition-colors">
+                    <i data-lucide="phone" class="text-stone-400 w-4 h-4"></i>
+                    <div>
+                        <p class="text-stone-500 text-xs uppercase tracking-wider mb-0.5">Téléphone</p>
+                        <p class="text-white font-medium text-sm">06 12 34 56 78</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5 border border-stone-700 rounded-xl px-6 py-5 hover:border-stone-500 transition-colors">
+                    <i data-lucide="mail" class="text-stone-400 w-4 h-4"></i>
+                    <div>
+                        <p class="text-stone-500 text-xs uppercase tracking-wider mb-0.5">Email</p>
+                        <p class="text-white font-medium text-sm">camille@animaux.fr</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5 border border-stone-700 rounded-xl px-6 py-5 hover:border-stone-500 transition-colors">
+                    <i data-lucide="map-pin" class="text-stone-400 w-4 h-4"></i>
+                    <div>
+                        <p class="text-stone-500 text-xs uppercase tracking-wider mb-0.5">Zone d'intervention</p>
+                        <p class="text-white font-medium text-sm">Paris & 20 km alentours</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5 border border-stone-700 rounded-xl px-6 py-5 hover:border-stone-500 transition-colors">
+                    <i data-lucide="clock" class="text-stone-400 w-4 h-4"></i>
+                    <div>
+                        <p class="text-stone-500 text-xs uppercase tracking-wider mb-0.5">Disponibilité</p>
+                        <p class="text-white font-medium text-sm">7 jours sur 7</p>
+                    </div>
+                </div>
+                <button class="w-full flex items-center justify-center gap-2 bg-white text-stone-900 font-medium py-4 rounded-xl hover:bg-stone-100 transition-colors mt-4">
+                    Envoyer un message <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-950 text-stone-600 text-center py-7 text-xs tracking-wide">
+        <span class="font-serif text-stone-400 text-base">Camille & Cie</span>
+        <span class="mx-3">·</span>
+        Garde d'animaux avec soin · Paris
+        <span class="mx-3">·</span>
+        © 2026
+    </footer>
+
+    <script>
+        // Initialiser les icônes Lucide
+        lucide.createIcons();
+
+        // Gestion du menu mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // Défilement fluide vers les rubriques
+        function scrollToSection(id) {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.add('hidden');
+            
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
